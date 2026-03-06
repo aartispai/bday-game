@@ -30,6 +30,7 @@ let start = false;
 let scoreText;
 let startText;
 let playmusic;
+let endtext;
 
 
 function preload() {
@@ -114,6 +115,8 @@ function create() {
     this.time.delayedCall(400, () => {
       this.physics.pause();
     });
+
+    endtext = this.add.text(100, 300, "HAPPY BIRTHDAY BHU!", { fontSize: "48px", fill: "#220afba5", backgroundColor: "#fff" })
 
   })
   //scoretext
