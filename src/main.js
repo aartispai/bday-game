@@ -31,7 +31,7 @@ let scoreText;
 let startText;
 let playmusic;
 let endtext;
-
+let restart;
 
 function preload() {
   this.load.image("bhu", "/assets/bhu.png");
@@ -114,6 +114,22 @@ function create() {
     this.cameras.main.shake(200, 0.01);
     this.time.delayedCall(400, () => {
       this.physics.pause();
+      restart = this.add.text(
+        this.cameras.main.centerX,
+        this.cameras.main.centerY + 80,
+        "RESTART", {
+        fontSize: "48px",
+        fill: "#220afba5",
+
+        backgroundColor: "#fff"
+      }
+      )
+        .setOrigin(0.5)
+        .setInteractive()
+      restart.on("pointerdown", () => {
+        this.scene.restart();
+      }
+      )
     });
 
     endtext = this.add.text(100, 300, "HAPPY BIRTHDAY BHU!", { fontSize: "48px", fill: "#220afba5", backgroundColor: "#fff" })
