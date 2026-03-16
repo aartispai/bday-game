@@ -128,6 +128,7 @@ function create() {
         .setInteractive()
       restart.on("pointerdown", () => {
         this.scene.restart();
+        score = 0;
       }
       )
     });
@@ -142,7 +143,7 @@ function create() {
   startText = this.add.text(
     screenCenterX,
     screenCenterY,
-    "Happy Birthday Bhu! \nClick to start",
+    "Happy Birthday Bhu! \n \tClick to start",
     {
       fontSize: "32px",
       fill: "#1920f3",
